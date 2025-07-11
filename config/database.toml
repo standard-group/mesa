@@ -2,4 +2,4 @@ driver = "postgres"
 sqlite_path = "data/mesa.db"
 
 # do not uncomment it unless you are using postgresql
-# postgres_dsn = "postgres://mesa_user:ilovemesaproject@localhost:5432/mesa?sslmode=disable"
+postgres_dsn = "postgres://mesa_user:ilovemesaproject@localhost:5432/mesa?sslmode=disable"
