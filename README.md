@@ -22,9 +22,16 @@ Read our wiki for more information on how to build Mesa from source:
 
 If you want to contribute to Mesa, please read our [contributing guidelines](https://github.com/standard-group/mesa/blob/main/CONTRIBUTING.md).
 
-## License and donation
+## License
 
 This project is licensed under the [GNU General Public License v3.0](https://github.com/standard-group/mesa/blob/main/LICENSE).
 
-If you want to support the development of Mesa, you can donate to our [Liberapay](https://liberapay.com/standard-group/donate). 
-**TODO:** make actual liberapay link, money will go to max and then we will spend it on this project.
+## Donate
+
+[![Donate using DonationAlerts](/static/img/shapes.svg)](https://www.donationalerts.com/r/standardgroup)
+
+> *why our donations via donationalerts?*
+
+cuz we are two dumb teenagers and we are from different countries, so we cant send money to each other. donationalerts is only a one way for us.
+
+*donations are appreciated, but not required.*
