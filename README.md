@@ -28,7 +28,7 @@ This project is licensed under the [GNU General Public License v3.0](https://git
 
 ## Donate
 
-[![Donate using DonationAlerts](/static/img/shapes.svg)](https://www.donationalerts.com/r/standardgroup)
+[![Donate using DonationAlerts](static/img/donate.svg)](https://www.donationalerts.com/r/standardgroup)
 
 > *why our donations via donationalerts?*
 
