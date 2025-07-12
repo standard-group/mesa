@@ -1,6 +1,6 @@
 # Project Mesa
 
-> [WARNING]
+> [!WARNING]
 > This project is still in development and made by two dumb teenagers.
 
 "Secure messenger for anyone who needs a safe, easy and robust way to communicate." is what project Briar said.
