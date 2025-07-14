@@ -4,14 +4,15 @@ import (
 	"net/http"
 
 	"github.com/go-chi/chi/v5"
-	"github.com/standard-group/mesa/internal/auth"
+	// "github.com/standard-group/mesa/internal/auth"
 )
 
 func NewServer() *http.Server {
 	r := chi.NewRouter()
-	r.Use(auth.AuthMiddleware)
+	// r.Use(auth.AuthMiddleware)
 	r.Post("/api/v1/register", RegisterHandler)
 	r.Post("/api/v1/login", LoginHandler)
+	r.Get("/api/v1/users/check", UserCheckHandler)
 
 	srv := &http.Server{
 		Addr:    ":8080",

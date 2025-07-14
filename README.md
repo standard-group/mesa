@@ -20,11 +20,11 @@ Read our wiki for more information on how to build Mesa from source:
 
 ## Contribute
 
-If you want to contribute to Mesa, please read our [contributing guidelines](https://github.com/standard-group/mesa/blob/main/CONTRIBUTING.md).
+If you want to contribute to Mesa, please read our [contributing guidelines](CONTRIBUTING.md).
 
 ## License
 
-This project is licensed under the [GNU General Public License v3.0](https://github.com/standard-group/mesa/blob/main/LICENSE).
+This project is licensed under the [GNU General Public License v3.0](LICENSE).
 
 ## Donate
 
