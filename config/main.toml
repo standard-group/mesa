@@ -1,8 +1,8 @@
-driver = "sqlite" # change to postgres if u want to use psql
+driver = "postgres" # change to postgres if u want to use psql
 sqlite_path = "data/mesa.db"
 jwt_secret_key = "super-secret-key"
 
 server_domain = "localhost:8080"
 
 # do not uncomment it unless you are using postgresql
-# postgres_dsn = "postgres://mesa_user:ilovemesaproject@localhost:5432/mesa?sslmode=disable"
+postgres_dsn = "postgres://mesa_user:ilovemesaproject@localhost:5432/mesa?sslmode=disable"
