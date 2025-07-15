@@ -1,3 +1,9 @@
+![Background image](docs/img/bg.jpg)    
+<div>
+    <img alt="Matrix" src="https://img.shields.io/matrix/project-mesa-room%3Amatrix.org?style=for-the-badge&logo=matrix" href="https://matrix.to/#/#project-mesa-room:matrix.org">
+    <img alt="Discord" src="https://img.shields.io/badge/Discord-7289DA?style=for-the-badge&logo=discord&logoColor=white" href="https://discord.gg/Z997UBvFJ4">
+</div>
+
 # Project Mesa
 
 > [!WARNING]
@@ -28,7 +34,7 @@ This project is licensed under the [GNU General Public License v3.0](LICENSE).
 
 ## Donate
 
-[![Donate using DonationAlerts](static/img/donate.svg)](https://www.donationalerts.com/r/standardgroup)
+[![Donate using DonationAlerts](docs/img/donate.svg)](https://www.donationalerts.com/r/standardgroup)
 
 > *why our donations via donationalerts?*
 

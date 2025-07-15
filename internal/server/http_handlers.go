@@ -45,7 +45,6 @@ func LoginHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	// Now passing username and server_domain separately to auth.LoginUser
 	token, err := auth.LoginUser(req.Username, req.ServerDomain, req.Password)
 	if err != nil {
 		log.Warn().Err(err).Str("username", req.Username).Str("server_domain", req.ServerDomain).Msg("Login failed")
@@ -89,7 +88,7 @@ func UserCheckHandler(w http.ResponseWriter, r *http.Request) {
 	json.NewEncoder(w).Encode(map[string]interface{}{
 		"exists":        true,
 		"user_id":       user.ID,
-		"pub_key":       user.PubKey, // Include pubkey for federation if needed
+		"pub_key":       user.PubKey, // ssss
 		"username":      user.Username,
 		"server_domain": user.ServerDomain,
 	})
