@@ -17,7 +17,7 @@ Unlike other/traditional messengers, Mesa doesnt't relay on one central server, 
 
 ## Download Mesa
 
-You can download the latest version of Mesa client and server from the [releases page](https://github.com/standard-group/mesa/releases).
+You can download the latest version of Mesa client from the [releases page](https://github.com/standard-group/mesa-client/releases). For server, [see here](https://github.com/standard-group/mesa/releases).
 
 ## Build Mesa from source
 
