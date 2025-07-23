@@ -1,30 +1,34 @@
+// Example main.go (ensure it's flexible with PORT and MESA_CONFIG_PATH)
 package main
 
 import (
+	// "fmt"
+	// "net/http"
 	"os"
+	"strconv"
 
 	"github.com/rs/zerolog"
 	"github.com/rs/zerolog/log"
-	"github.com/standard-group/mesa/internal/db"
-	"github.com/standard-group/mesa/internal/server"
 )
 
 func main() {
 	log.Logger = log.Output(zerolog.ConsoleWriter{Out: os.Stderr})
+	zerolog.SetGlobalLevel(zerolog.InfoLevel)
 
-	if err := db.InitDB(); err != nil {
-		log.Fatal().Err(err).Msg("Failed to initialize database")
+	portStr := os.Getenv("PORT")
+	if portStr == "" {
+		portStr = "8080"
 	}
-	defer func() {
-		if db.DB != nil {
-			log.Info().Msg("Closing database connection")
-			db.DB.Close()
-		}
-	}()
+	port, err := strconv.Atoi(portStr)
+	if err != nil {
+		log.Fatal().Err(err).Msg("Invalid PORT environment variable")
+	}
 
-	srv := server.NewServer()
-	log.Info().Msgf("Starting server on %s", srv.Addr)
-	if err := srv.ListenAndServe(); err != nil {
-		log.Fatal().Msg(err.Error())
-	}
+	// srv := server.NewServer()
+	// srv.Addr = fmt.Sprintf(":%d", port)
+
+	log.Info().Int("port", port).Msg("Starting server")
+	// if err := srv.ListenAndServe(); err != http.ErrServerClosed {
+	//	log.Fatal().Err(err).Msg("Server failed to start")
+	// }
 }

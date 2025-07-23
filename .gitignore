@@ -27,3 +27,4 @@ go.work.sum
 
 # temporary migrations folder in gitignore
 build/
+config/main.toml
