@@ -1,14 +1,15 @@
-// Example main.go (ensure it's flexible with PORT and MESA_CONFIG_PATH)
 package main
 
 import (
-	// "fmt"
-	// "net/http"
+	"context"
 	"os"
+	"os/signal"
 	"strconv"
+	"syscall"
 
 	"github.com/rs/zerolog"
 	"github.com/rs/zerolog/log"
+	"github.com/standard-group/mesa/internal/server"
 )
 
 func main() {
@@ -24,11 +25,18 @@ func main() {
 		log.Fatal().Err(err).Msg("Invalid PORT environment variable")
 	}
 
-	// srv := server.NewServer()
-	// srv.Addr = fmt.Sprintf(":%d", port)
+	srv := server.New(port)
 
-	log.Info().Int("port", port).Msg("Starting server")
-	// if err := srv.ListenAndServe(); err != http.ErrServerClosed {
-	//	log.Fatal().Err(err).Msg("Server failed to start")
-	// }
+	// trap SIGINT/SIGTERM for graceful shutdown
+	stop := make(chan os.Signal, 1)
+	signal.Notify(stop, os.Interrupt, syscall.SIGTERM)
+
+	go func() {
+		if err := srv.ListenAndServe(); err != nil {
+			log.Fatal().Err(err).Msg("Server failed to start")
+		}
+	}()
+
+	<-stop
+	srv.Shutdown(context.Background())
 }
