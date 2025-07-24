@@ -1,0 +1,8 @@
+[http]
+port = 7070
+
+[log]
+level = "debug"
+
+[paths]
+data_dir = "/var/lib/mesa"
