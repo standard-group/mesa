@@ -5,4 +5,4 @@ port = 7070
 level = "debug"
 
 [paths]
-data_dir = "/var/lib/mesa"
+data_dir = "./data"

@@ -130,5 +130,5 @@ port = 8080
 level = "info"
 
 [paths]
-data_dir = "./data"
+data_dir = "./data" # edit it to point to your data directory or stay it as is.
 `
