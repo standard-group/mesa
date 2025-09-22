@@ -26,4 +26,4 @@ go.work.sum
 .env
 
 # temporary migrations folder in gitignore
-build/
+build/data/
