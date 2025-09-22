@@ -70,7 +70,7 @@ func InitDB() error {
 		log.Warn().Msg("ServerDomain not set in config/main.toml. Federation might not work correctly.")
 	}
 
-	// psql sjucks and hard i hate it
+	// Create users table with appropriate schema for both SQLite and PostgreSQL
 	stmt := `CREATE TABLE IF NOT EXISTS users (
 		id TEXT PRIMARY KEY,
 		username TEXT NOT NULL,
@@ -93,7 +93,7 @@ func SaveUser(u models.User) error {
 	query := `INSERT INTO users (id, username, server_domain, password_hash, pubkey, created_at) VALUES ($1, $2, $3, $4, $5, $6)`
 
 	_, err := DB.Exec(query,
-		u.ID, u.Username, u.ServerDomain, u.PasswordHash, u.PubKey, u.CreatedAt.Format(time.RFC3339Nano)) // RFC3339Nano text editor whatt!!!
+		u.ID, u.Username, u.ServerDomain, u.PasswordHash, u.PubKey, u.CreatedAt.Format(time.RFC3339Nano))
 	if err != nil {
 		log.Error().Err(err).Str("username", u.Username).Str("server_domain", u.ServerDomain).Msg("Failed to save user to local DB")
 	}
@@ -104,7 +104,7 @@ func GetUserByUsername(username string, serverDomain string) (models.User, error
 	var u models.User
 	var created string
 
-	// SELECT sigma
+	// Query for user in local database
 	row := DB.QueryRow(`SELECT id, username, server_domain, password_hash, pubkey, created_at FROM users WHERE username = $1 AND server_domain = $2`, username, serverDomain)
 	err := row.Scan(&u.ID, &u.Username, &u.ServerDomain, &u.PasswordHash, &u.PubKey, &created)
 

@@ -88,7 +88,7 @@ func UserCheckHandler(w http.ResponseWriter, r *http.Request) {
 	json.NewEncoder(w).Encode(map[string]interface{}{
 		"exists":        true,
 		"user_id":       user.ID,
-		"pub_key":       user.PubKey, // ssss
+		"pub_key":       user.PubKey,
 		"username":      user.Username,
 		"server_domain": user.ServerDomain,
 	})
